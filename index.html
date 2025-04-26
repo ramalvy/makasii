@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>makasi sayang</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            transition: background 1s;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s;
+        }
+
+        .heart {
+            font-size: 60px;
+            animation: pulse 1.5s infinite;
+            margin: 10px;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .animation-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        iframe {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 640px;
+            height: 360px;
+            border: none;
+            border-radius: 15px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .button {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #e6514c;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .animation-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        #animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        
+        /* Efek Hujan Hati */
+        .rain-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .rain-container .heart {
+            position: absolute;
+            font-size: 30px;
+            animation: fall 5s linear infinite;
+        }
+
+                /* 1. Animasi Bunga Mekar */
+                .flower {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, pink, transparent);
+            border-radius: 50%;
+            animation: bloom 3s infinite ease-in-out;
+        }
+
+        
+        /* 3. Efek Hujan Bunga */
+        .flower-fall {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            background: pink;
+            border-radius: 50%;
+            animation: fall 10s linear infinite;
+            top: -50px;
+        }
+
+        .flower-fall:nth-child(odd) {
+            animation-duration: 8s;
+            background: #ffe6f7;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6f61;
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+            animation: float 4s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body id="main-body">
+    <div class="rain-container">
+        <div class="heart" style="left: 10%; animation-delay: 0s;">💖</div>
+        <div class="heart" style="left: 20%; animation-delay: 1s;">💕</div>
+        <div class="heart" style="left: 30%; animation-delay: 2s;">🌸</div>
+        <div class="heart" style="left: 40%; animation-delay: 3s;">🌹</div>
+    </div>
+
+    
+    <!-- 1. Animasi Bunga Mekar -->
+    <div class="flower" style="top: 20%; left: 10%;"></div>
+    <div class="flower" style="top: 50%; left: 80%;"></div>
+
+        <!-- 3. Efek Hujan Bunga -->
+        <div class="flower-fall" style="left: 5%;"></div>
+        <div class="flower-fall" style="left: 30%;"></div>
+        <div class="flower-fall" style="left: 70%;"></div>
+    <div class="container">
+        <h1>haiii</h1>
+        <p id="page1">makasii ya sayang, makasi banyak udah selalu ada buat aku, nemenin aku terus, aku seneng bisa ketemu kamu lagi, haha</p>
+        <p id="page2">makasi untuk semua yg pernah kamu lakuin ke aku, karena kamu aku jadi happy banget tiap hari</p>
+        <p id="page3">aku juga minta maaf yaaa</p>
+        <p id="page4">maaf karena udah sayang banget sama kamu ahahahah</p>
+        <p id="page4">LOVE UUU MORE SAYANG AKU</p>
+        <button class="button" onclick="nextPage()">Lanjutkan</button>
+    </div>
+
+    <div id="animation">
+        <!-- Hearts Animation -->
+    </div>
+
+
+    <audio id="song" src="Hal-Terimaksih.mp3"></audio>
+
+    <script>
+        const pages = document.querySelectorAll('p');
+        const body = document.getElementById('main-body');
+        const audio = document.getElementById('song');
+        let currentPage = 0;
+
+        const backgrounds = [
+            'linear-gradient(135deg, #ff9a9e, #fad0c4)',
+            'linear-gradient(135deg, #a18cd1, #fbc2eb)',
+            'linear-gradient(135deg, #fbc2eb, #a6c1ee)',
+            'linear-gradient(135deg, #fdcbf1, #e6dee9)'
+        ];
+
+        function nextPage() {
+            if (currentPage === 0) {
+                audio.play();
+            }
+            if (currentPage < pages.length) {
+                if (currentPage > 0) {
+                    pages[currentPage - 1].style.display = 'none';
+                }
+                pages[currentPage].style.display = 'block';
+                body.style.background = backgrounds[currentPage];
+                currentPage++;
+            }
+        }
+
+        // Generate hearts animation
+        const animationDiv = document.getElementById('animation');
+        for (let i = 0; i < 30; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.top = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            animationDiv.appendChild(heart);
+        }
+
+        // Initialize first page
+        pages[0].style.display = 'block';
+        body.style.background = backgrounds[0];
+    </script>
+</body>
+</html>
